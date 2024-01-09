@@ -1,0 +1,30 @@
+:root {
+    --primary: #003C57;
+    --second: #A5BCD4;
+    --main: #EE7C18;
+}
+
+body {
+    background-color: var(--second);
+}
+
+.text {
+    margin: auto;
+    width: 50%;
+    padding: 10%;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+    display: block;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+}
+
+.year {
+    font-size: 110%;
+}
