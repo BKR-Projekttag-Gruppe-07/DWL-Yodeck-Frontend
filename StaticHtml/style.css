@@ -5,20 +5,32 @@
 }
 
 body {
-    background-color: var(--second);
-    margin: 0;                                  /* scrolling aus */
-    height: 100%;                               /* scrolling aus */
-    overflow: hidden;                           /* scrolling aus */
-    background-image: url("background.jpg");
-    background-size: 100%;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Stellt sicher, dass das Video hinter anderen Elementen liegt */
 }
 
 .text {
-    margin: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 5%;
     text-align: center;
     font-size: 170%;
     font-family: 'Poppins', sans-serif;
+    z-index: 1; /* Stellt sicher, dass der Text über dem Video liegt */
 }
 
 .logo {
@@ -27,35 +39,35 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-top: 8%;
+    z-index: 1; /* Stellt sicher, dass das Logo über dem Video liegt */
 }
 
 .year {
     font-size: 110%;
 }
 
-.rectangleTop {
+.rectangleTop,
+.rectangleBottom,
+.rectangleBlue {
     position: absolute;
-    top: 0%;
     width: 100%;
     height: 6%;
-    background-color: var(--main);
     margin-top: 0%;
+    z-index: 1; /* Stellt sicher, dass die Rechtecke über dem Video liegen */
+}
+
+.rectangleTop {
+    top: -2%;
+    background-color: var(--main);
 }
 
 .rectangleBottom {
-    position: absolute;
-    top: 92%;
-    width: 100%;
-    height: 2%;
+    top: 94%;
+    height: 1%;
     background-color: var(--main);
-    margin-top: 0%;
 }
 
 .rectangleBlue {
-    position: absolute;
-    top: 94%;
-    width: 100%;
-    height: 6%;
+    top: 96%;
     background-color: var(--primary);
-    margin-top: 0%;
 }
