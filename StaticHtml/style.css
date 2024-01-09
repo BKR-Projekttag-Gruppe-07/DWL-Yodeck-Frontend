@@ -6,25 +6,56 @@
 
 body {
     background-color: var(--second);
+    margin: 0;                                  /* scrolling aus */
+    height: 100%;                               /* scrolling aus */
+    overflow: hidden;                           /* scrolling aus */
+    background-image: url("background.jpg");
+    background-size: 100%;
 }
 
 .text {
-    margin: auto;
-    width: 50%;
-    padding: 10%;
+    margin: absolute;
+    padding: 5%;
     text-align: center;
-    font-size: 32px;
+    font-size: 170%;
     font-family: 'Poppins', sans-serif;
 }
 
 .logo {
     display: block;
-    width: 30%;
+    width: 35%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 5%;
+    padding-top: 8%;
 }
 
 .year {
     font-size: 110%;
+}
+
+.rectangleTop {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 6%;
+    background-color: var(--main);
+    margin-top: 0%;
+}
+
+.rectangleBottom {
+    position: absolute;
+    top: 92%;
+    width: 100%;
+    height: 2%;
+    background-color: var(--main);
+    margin-top: 0%;
+}
+
+.rectangleBlue {
+    position: absolute;
+    top: 94%;
+    width: 100%;
+    height: 6%;
+    background-color: var(--primary);
+    margin-top: 0%;
 }
