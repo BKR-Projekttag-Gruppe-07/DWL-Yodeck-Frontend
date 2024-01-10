@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Import</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CSV Import</h1>
+    <form action="import.php" method="post" enctype="multipart/form-data">
+        <label for="csvFile">CSV File:</label>
+        <input type="file" name="csvFile" id="csvFile" accept=".csv">
+        <br>
+        <input type="submit" value="Import">
+    </form>
+</body>
+</html>

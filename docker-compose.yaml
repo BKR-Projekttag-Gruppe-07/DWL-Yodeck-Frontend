@@ -27,7 +27,7 @@ services:
       - "7098:80"
       
 
-  nginx:
+  nginx_Static:
     container_name: StaticNginxSite
     image: nginx:latest
     restart: always
@@ -38,6 +38,17 @@ services:
       - ./StaticHtml/style.css:/usr/share/nginx/html/style.css
       - ./StaticHtml/frontend.js:/usr/share/nginx/html/frontend.js
       - ./Statichtml/ressources:/usr/share/nginx/html/ressources
+
+
+  Apache_DBimport:
+    container_name: DBimportWebsite
+    image: httpd:latest
+    restart: always
+    ports:
+      - "81:80"
+    volumes:
+      - ./DBimportWebsite:/usr/local/apache2/htdocs
+
 
   java_app:
     container_name: javaBackend
