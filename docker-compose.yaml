@@ -10,6 +10,8 @@ services:
       MYSQL_DATABASE: dwlscreen
       MYSQL_USER: dwluser
       MYSQL_PASSWORD: Hallo.123
+        ports:
+      - "3306:3306"
     volumes:
       - DWLyodeckscreen:/var/lib/mysql
       - ./DBimport:/docker-entrypoint-initdb.d
@@ -45,7 +47,7 @@ services:
     image: httpd:latest
     restart: always
     ports:
-      - "81:80"
+      - "8080:80"
     volumes:
       - ./DBimportWebsite:/usr/local/apache2/htdocs
 
