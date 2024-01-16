@@ -6,7 +6,8 @@
 
 body {
     margin: 0;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
 }
 
@@ -14,32 +15,29 @@ body {
     position: fixed;
     right: 0;
     bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1; /* Stellt sicher, dass das Video hinter anderen Elementen liegt */
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
 }
 
 .text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 30vh;
+    left: 33vw;
     padding: 5%;
     text-align: center;
     font-size: 170%;
     font-family: 'Poppins', sans-serif;
-    z-index: 1; /* Stellt sicher, dass der Text über dem Video liegt */
+    z-index: 1;
 }
 
 .logo {
     display: block;
-    width: 35%;
+    width: 35vw;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 8%;
-    z-index: 1; /* Stellt sicher, dass das Logo über dem Video liegt */
+    padding-top: 10vh;
+    z-index: 1;
 }
 
 .year {
@@ -50,24 +48,24 @@ body {
 .rectangleBottom,
 .rectangleBlue {
     position: absolute;
-    width: 100%;
-    height: 6%;
-    margin-top: 0%;
-    z-index: 1; /* Stellt sicher, dass die Rechtecke über dem Video liegen */
+    width: 100vw;
+    height: 6vh;
+    margin-top: 0vh;
+    z-index: 1;
 }
 
 .rectangleTop {
-    top: -2%;
+    top: -2vh;
     background-color: var(--main);
 }
 
 .rectangleBottom {
-    top: 94%;
+    top: 94vh;
     height: 1%;
     background-color: var(--main);
 }
 
 .rectangleBlue {
-    top: 96%;
+    top: 96vh;
     background-color: var(--primary);
 }
