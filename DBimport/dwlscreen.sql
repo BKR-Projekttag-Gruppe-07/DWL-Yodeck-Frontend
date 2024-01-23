@@ -102,7 +102,7 @@ INSERT INTO `mitarbeiter` (`ID`, `Vorname`, `Nachname`, `Anstelldatum`, `Geburts
 (58, 'Nadine', 'Stippel', '2023-08-10', '1983-03-26'),
 (59, 'Nadja', 'Merkel', '2020-08-02', '1988-02-17'),
 (60, 'Ute', 'Schmidt', '1991-08-02', '1972-02-16'),
-(61, 'Verena', 'Roling', '2028-07-02', '1985-03-22');
+(61, 'Verena', 'Roling', '2028-07-02', '1985-03-22'),
 (62, 'Viktor', 'Wagner', '2022-09-05', '1995-09-10'),
 (63, 'Walter', 'Hofmann', '2023-02-14', '1978-01-12'),
 (64, 'Xaver', 'Meier', '2025-05-22', '1980-06-28'),
@@ -131,7 +131,7 @@ INSERT INTO `mitarbeiter` (`ID`, `Vorname`, `Nachname`, `Anstelldatum`, `Geburts
 (87, 'Zara', 'Ludwig', '2029-02-02', '2000-12-01'),
 (88, 'Zion', 'Gross', '2028-06-22', '1973-07-26'),
 (89, 'Zoltan', 'Kaiser', '2023-08-02', '1996-09-30'),
-(90, 'Zahra', 'Fuchs', '2025-07-02', '1988-03-22');
+(90, 'Zahra', 'Fuchs', '2025-07-02', '1988-03-22'),
 (91, 'Zephyr', 'Hoffmann', '2023-10-12', '1999-11-05'),
 (92, 'Zara', 'Keller', '2024-04-02', '1985-06-15'),
 (93, 'Zion', 'Haas', '2026-08-22', '2001-03-28'),
@@ -161,7 +161,7 @@ INSERT INTO `mitarbeiter` (`ID`, `Vorname`, `Nachname`, `Anstelldatum`, `Geburts
 (117, 'Zephyr', 'Schreiber', '2028-03-02', '1990-04-14'),
 (118, 'Zion', 'Weber', '2029-07-12', '2002-05-30'),
 (119, 'Zara', 'Holler', '2022-02-22', '1987-08-17'),
-(120, 'Zelda', 'Kopp', '2023-09-15', '1995-03-25');
+(120, 'Zelda', 'Kopp', '2023-09-15', '1995-03-25'),
 (121, 'Zara', 'Friedrich', '2024-02-02', '1986-06-23'),
 (122, 'Zion', 'Schmitt', '2027-07-12', '2000-10-05'),
 (123, 'Zelda', 'Rudolph', '2028-04-22', '1991-12-01'),

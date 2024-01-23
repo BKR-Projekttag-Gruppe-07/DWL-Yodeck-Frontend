@@ -42,16 +42,6 @@ services:
       - ./Statichtml/ressources:/usr/share/nginx/html/ressources
 
 
-  Apache_DBimport:
-    container_name: DBimportWebsite
-    image: httpd:latest
-    restart: always
-    ports:
-      - "8080:80"
-    volumes:
-      - ./DBimportWebsite:/usr/local/apache2/htdocs
-
-
   java_app:
     container_name: javaBackend
     image: openjdk:latest
