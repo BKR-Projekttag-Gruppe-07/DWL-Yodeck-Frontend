@@ -15,7 +15,7 @@ function connectWebSocket() {
 
     socket.onerror = function (event) {
         console.error("Verbindungsfehler! Wiederholung in 30 Sekunden...", event);
-        document.getElementById("name").textContent = "WebSocket Fehler. Wiederholung in 30 Sekunden...";
+        document.getElementById("section1").textContent = "WebSocket Fehler. Wiederholung in 30 Sekunden...";
         setTimeout(connectWebSocket, 30000);
     };
 }
