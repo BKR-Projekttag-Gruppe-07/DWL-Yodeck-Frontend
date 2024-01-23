@@ -10,6 +10,9 @@ services:
       MYSQL_DATABASE: dwlscreen
       MYSQL_USER: dwluser
       MYSQL_PASSWORD: Hallo.123
+    networks:
+      yodeck_net:
+        ipv4_address: 172.168.0.2
     ports:
       - "3306:3306"
     volumes:
@@ -25,6 +28,9 @@ services:
       PMA_HOST: mysql
       PMA_PORT: 3306
       MYSQL_ROOT_PASSWORD: Hallo.123
+    networks:
+      yodeck_net:
+        ipv4_address: 172.168.0.3
     ports:
       - "7098:80"
       
@@ -33,8 +39,11 @@ services:
     container_name: StaticNginxSite
     image: nginx:latest
     restart: always
+    networks:
+      yodeck_net:
+        ipv4_address: 172.168.0.4
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
       - ./StaticHtml/index.html:/usr/share/nginx/html/index.html
       - ./StaticHtml/style.css:/usr/share/nginx/html/style.css
@@ -49,8 +58,19 @@ services:
     command: java -jar /app/Backend.jar
     volumes:
       - ./javaBackend/Backend.jar:/app/Backend.jar
+    networks:
+      yodeck_net:
+        ipv4_address: 172.168.0.5
     ports:
       - "8887:8887" 
 
 volumes:
   DWLyodeckscreen:
+  
+networks:
+  yodeck_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.168.0.0/24
+          gateway: 172.168.0.1

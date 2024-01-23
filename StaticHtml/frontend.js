@@ -1,7 +1,8 @@
 let socket;
 
+
 function connectWebSocket() {
-    socket = new WebSocket("ws://localhost:8887");
+    socket = new WebSocket("ws://localhost:8887"); //gegebenfalls 212.132.65.11 wenn auf server
 
     socket.onmessage = function (event) {
         const receivedMessage = event.data;
