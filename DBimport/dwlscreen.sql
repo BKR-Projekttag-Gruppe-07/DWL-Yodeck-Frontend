@@ -192,6 +192,9 @@ INSERT INTO `mitarbeiter` (`ID`, `Vorname`, `Nachname`, `Anstelldatum`, `Geburts
 (148, 'Zara', 'Gebhardt', '2025-05-02', '1984-09-26'),
 (149, 'Zelda', 'Kühn', '2026-08-22', '1978-11-30'),
 (150, 'Zephyr', 'Schreiber', '2028-03-02', '1990-04-14');
+(151, 'Marten', 'Othmann', '2021-01-23', '1990-04-14');
+(152, 'Ron', 'Schottmeier', '2021-01-24', '1990-01-23');
+(153, 'Malte', 'Roevemeier', '1991-01-23', '1990-01-24');
 
 --
 -- Indizes der exportierten Tabellen
