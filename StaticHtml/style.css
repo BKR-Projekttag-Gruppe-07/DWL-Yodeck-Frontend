@@ -9,6 +9,10 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #background-video {
@@ -20,37 +24,17 @@ body {
     z-index: -1;
 }
 
-.textTop {
-    position: absolute;
-    top: 29vh;
-    left: 33vw;
-    padding: 5%;
-    text-align: center;
-    font-size: 170%;
-    font-family: 'Poppins', sans-serif;
-    z-index: 1;
+.hoehe {
+    height: 100vh;
 }
 
-.textMiddle {
-    position: absolute;
-    top: 42vh;
-    left: 38vw;
-    padding: 5%;
+.textTop, .textMiddle, .textBottom {
     text-align: center;
     font-size: 170%;
     font-family: 'Poppins', sans-serif;
     z-index: 1;
-}
-
-.textBottom {
-    position: absolute;
-    top: 60vh;
-    left: 30vw;
-    padding: 5%;
-    text-align: center;
-    font-size: 170%;
-    font-family: 'Poppins', sans-serif;
-    z-index: 1;
+    width: 100%;
+    padding: 1% 0; /* Adjust padding as needed */
 }
 
 .logo {
