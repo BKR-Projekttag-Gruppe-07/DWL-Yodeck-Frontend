@@ -9,8 +9,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="frontend.js"></script>
+    <script>
+        window.onload = function() {
+            var currentDate = new Date();
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var formattedDate = currentDate.toLocaleDateString('de-DE', options);
+
+            document.getElementById('currentDate').innerHTML = formattedDate;
+        };
+    </script>
+
 </head>
 <body>
+    <div id="currentDate" class="currentDate"></div>
+
     <video id="background-video" autoplay muted loop>
         <source src="ressources/milk.mp4" type="video/mp4">
     </video>
@@ -18,15 +30,15 @@
     <img class="logo" src="ressources/logo.jpg" width="25%">
     
     <div class="textTop">
-        <h2 id="section1">Danke</h2>
+        <h2 id="section1">Verbindung</h2>
     </div>
 
     <div class="textMiddle">
-        <h1 id="section2">Jahr</h1>
+        <h1 id="section2">zum Websocket</h1>
     </div>
 
     <div class="textBottom">
-        <h2 id="section3">Connecting to WebSocket...</h2>
+        <h2 id="section3">Wird Hergestellt</h2>
     </div>
 
     <div class="rectangleTop"></div>

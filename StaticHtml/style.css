@@ -2,6 +2,7 @@
     --primary: #003C57;
     --second: #A5BCD4;
     --main: #EE7C18;
+    --text: #000000;
 }
 
 body {
@@ -66,4 +67,14 @@ body {
     top: 94vh;
     height: 1%;
     background-color: var(--main);
+}
+
+.currentDate {
+    color: var(--text);
+    font-size: 110%;
+    font-family: 'Poppins', sans-serif;
+    z-index: 1;
+    position: fixed;
+    top: 90vh;
+    right: 5vw;
 }
