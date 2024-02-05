@@ -43,9 +43,10 @@ INSERT INTO `mitarbeiter` (`Vorname`, `Nachname`, `Anstelldatum`, `Geburtstag`) 
 ('Alexander', 'Korsch', '2020-02-02', '1941-02-22'),
 ('Alexandra', 'Test', '2024-04-02', '1988-12-28'),
 ('Zephyr', 'Schreiber', '2028-01-23', '1990-01-23'),
-('Marten', 'Othmann', '2021-01-23', '1990-04-14'),
-('Ron', 'Schottmeier', '2021-01-24', '1990-01-23'),
-('Malte', 'Roevemeier', '1991-01-23', '1990-01-24');
+('Marten', 'Othmann', '2021-02-06', '1990-04-14'),
+('Ron', 'Schottmeier', '2021-01-24', '1990-02-06'),
+('Malte', 'Roevemeier', '1991-02-05', '1990-02-05');
+('Felix', 'Hilbers', '1991-02-06', '1990-01-24');
 
 --
 -- Indizes der exportierten Tabellen
