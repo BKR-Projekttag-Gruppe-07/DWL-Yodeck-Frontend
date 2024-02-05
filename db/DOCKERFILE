@@ -1,0 +1,11 @@
+# Verwende das offizielle MySQL-Basisimage
+FROM mysql:latest
+
+# Erstelle einen Arbeitsordner im Container
+WORKDIR /docker-entrypoint-initdb.d
+
+# Kopiere die SQL-Datei in den Arbeitsordner im Container
+COPY ./DBimport/dwlscreen.sql /docker-entrypoint-initdb.d/
+
+# Öffne den Port 3306
+EXPOSE 3306

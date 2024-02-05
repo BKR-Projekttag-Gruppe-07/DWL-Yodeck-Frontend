@@ -1,72 +1,76 @@
-version: '3.1'
+version: '3'
 
 services:
-  mysql:
-    container_name: YodeckScreenDB
-    image: mysql:latest
+  db:
+    container_name: mysql
+    build:
+      context: ./db
+      dockerfile: DOCKERFILE
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: Hallo.123
-      MYSQL_DATABASE: dwlscreen
-      MYSQL_USER: dwluser
-      MYSQL_PASSWORD: Hallo.123
+    env_file:
+      - logins.env
     networks:
       yodeck_net:
         ipv4_address: 172.168.0.2
     ports:
       - "3306:3306"
     volumes:
-      - DWLyodeckscreen:/var/lib/mysql
-      - ./DBimport:/docker-entrypoint-initdb.d
-      
-  
-  phpmyadmin:
-    container_name: phpmyadmin
-    image: phpmyadmin/phpmyadmin:latest
+      - db_data:/var/lib/mysql
+
+  java_backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: DOCKERFILE
     restart: always
-    environment:
-      PMA_HOST: mysql
-      PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: Hallo.123
+    depends_on:
+      - db
     networks:
       yodeck_net:
         ipv4_address: 172.168.0.3
     ports:
-      - "7098:80"
-      
+      - "8887:8887"
 
-  nginx_Static:
-    container_name: StaticNginxSite
-    image: nginx:latest
+  nginx:
+    container_name: nginx
+    build:
+      context: ./site
+      dockerfile: DOCKERFILE
     restart: always
     networks:
       yodeck_net:
         ipv4_address: 172.168.0.4
     ports:
-      - "8080:80"
-    volumes:
-      - ./StaticHtml/index.html:/usr/share/nginx/html/index.html
-      - ./StaticHtml/style.css:/usr/share/nginx/html/style.css
-      - ./StaticHtml/frontend.js:/usr/share/nginx/html/frontend.js
-      - ./Statichtml/ressources:/usr/share/nginx/html/ressources
+      - "8000:80"
 
 
-  java_app:
-    container_name: javaBackend
-    image: openjdk:latest
-    restart: always
-    command: java -jar /app/Backend.jar
-    volumes:
-      - ./javaBackend/Backend.jar:/app/Backend.jar
+  phpmyadmin:
+    container_name: phpmyadmin1
+    image: phpmyadmin/phpmyadmin:latest
     networks:
       yodeck_net:
         ipv4_address: 172.168.0.5
     ports:
-      - "8887:8887" 
+      - "8001:80"
+    links:
+      - db:db
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
 
-volumes:
-  DWLyodeckscreen:
-  
+
+  import:
+    container_name: csvimport
+    build:
+      context: ./CSVimport
+      dockerfile: DOCKERFILE
+    restart: always
+    networks:
+      yodeck_net:
+        ipv4_address: 172.168.0.6
+    ports:
+      - "8002:80"
+
 networks:
   yodeck_net:
     driver: bridge
@@ -74,3 +78,7 @@ networks:
       config:
         - subnet: 172.168.0.0/24
           gateway: 172.168.0.1
+
+volumes:
+  db_data:
+

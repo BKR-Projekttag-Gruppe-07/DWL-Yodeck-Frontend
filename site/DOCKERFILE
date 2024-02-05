@@ -1,0 +1,11 @@
+# Verwende das offizielle Nginx-Basisimage
+FROM nginx:latest
+
+# Erstelle einen Arbeitsordner im Container
+WORKDIR /usr/share/nginx/html
+
+# Kopiere die statischen Dateien in den Arbeitsordner im Container
+COPY ./StaticHtml/ .
+
+# Öffne den Port 80 für den Nginx-Webserver
+EXPOSE 80

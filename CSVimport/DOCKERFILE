@@ -1,0 +1,9 @@
+# Use the official PHP 7.4 Apache image
+FROM php:7.4-apache
+
+# Copy your PHP files into the /var/www/html directory
+COPY ./CSVsite/index.php /var/www/html/index.php
+COPY ./CSVsite/upload.php /var/www/html/upload.php
+
+# Expose port 80
+EXPOSE 80

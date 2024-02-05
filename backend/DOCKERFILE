@@ -1,0 +1,14 @@
+# Verwende ein offizielles OpenJDK-Basisimage
+FROM openjdk:latest
+
+# Erstelle einen Arbeitsordner im Container
+WORKDIR /app
+
+# Kopiere das Java-Programm in den Arbeitsordner im Container
+COPY ./javaBackend/Backend.jar /app/
+
+# Setze den Startbefehl für das Java-Programm
+CMD ["java", "-jar", "Backend.jar"]
+
+# Öffne den Port 8887
+EXPOSE 8887
