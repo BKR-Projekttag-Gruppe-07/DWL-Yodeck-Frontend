@@ -3,67 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSV to MySQL Import</title>
+    <title>CSV Import/Export</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            background-color: #f4f4f4;
         }
 
-        h2 {
+        h1 {
+            text-align: center;
             color: #333;
         }
 
         form {
+            text-align: center;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         label {
-            font-size: 16px;
-            margin-bottom: 10px;
             display: block;
+            margin-bottom: 10px;
         }
 
-        input {
+        input[type="file"] {
+            display: block;
             width: 100%;
             padding: 8px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
+            margin-bottom: 10px;
         }
 
-        button {
+        button[type="submit"],
+        a button {
+            display: inline-block;
             background-color: #4caf50;
-            color: white;
-            padding: 10px 15px;
+            color: #fff;
             border: none;
-            border-radius: 4px;
+            padding: 10px 20px;
             cursor: pointer;
-            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
         }
 
-        button:hover {
+        button[type="submit"]:hover,
+        a button:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h2>CSV to MySQL Import</h2>
+    <h1>CSV Import/Export</h1>
 
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <label for="file">Choose CSV File:</label>
-            <input type="file" name="file" id="file">
-            <button type="submit" name="submit">Upload</button>
-        </form>
+    <!-- Formular zum Hochladen der CSV-Datei -->
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="file">CSV-Datei hochladen:</label>
+        <input type="file" name="file" id="file" accept=".csv">
+        <button type="submit">Hochladen</button>
+    </form>
+
+    <br>
+
+    <!-- Knopf zum Herunterladen der aktuellen Datenbank als CSV -->
+    <div style="text-align: center;">
+        <a href="export.php" download="mitarbeiter.csv">
+            <button>Download Datenbank als CSV</button>
+        </a>
     </div>
 </body>
 </html>
