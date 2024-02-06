@@ -66,25 +66,28 @@
                 // CSV-Datei einlesen und Daten in die Datenbank importieren
                 $csvData = file_get_contents($file['tmp_name']);
                 $lines = explode("\n", $csvData);
-                
+
                 foreach($lines as $line) {
                     // Ignoriere leere Zeilen
                     if (!empty(trim($line))) {
                         $data = str_getcsv($line, ';');
-                        $firstName = $data[0];
-                        $lastName = $data[1];
-                        $employmentDate = $data[2];
-                        $birthday = $data[3];
+                        $firstName = $db->real_escape_string($data[0]);
+                        $lastName = $db->real_escape_string($data[1]);
+                        $employmentDate = $db->real_escape_string($data[2]);
+                        $birthday = $db->real_escape_string($data[3]);
 
-                        // Hier sollte die eigentliche Datenbank-Insert-Anweisung stehen
-                        // (ersetze die Platzhalter mit den tatsächlichen Spaltennamen und Werten)
-                        $insertQuery = "INSERT INTO mitarbeiter (Vorname, Nachname, Anstelldatum, Geburtstag) 
-                                        VALUES ('$firstName', '$lastName', '$employmentDate', '$birthday')";
+                        // Überprüfen, ob der Datensatz bereits existiert
+                        $checkQuery = "SELECT * FROM mitarbeiter WHERE Vorname='$firstName' AND Nachname='$lastName' AND Anstelldatum='$employmentDate' AND Geburtstag='$birthday'";
+                        $result = $db->query($checkQuery);
 
-                        // Hier sollte die Abfrage ausgeführt werden (nicht vergessen, auf SQL-Injektion zu prüfen)
-                        // Beispiel: $db->query($insertQuery);
-                        if (!$db->query($insertQuery)) {
-                            echo "Fehler beim Einfügen der Daten: " . $db->error . "<br>";
+                        if ($result->num_rows == 0) {
+                            // Datensatz einfügen, wenn er nicht vorhanden ist
+                            $insertQuery = "INSERT INTO mitarbeiter (Vorname, Nachname, Anstelldatum, Geburtstag) 
+                                            VALUES ('$firstName', '$lastName', '$employmentDate', '$birthday')";
+
+                            if (!$db->query($insertQuery)) {
+                                echo "Fehler beim Einfügen der Daten: " . $db->error . "<br>";
+                            }
                         }
                     }
                 }
