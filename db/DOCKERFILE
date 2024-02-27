@@ -1,5 +1,5 @@
 # Verwende das offizielle MySQL-Basisimage
-FROM mysql:latest
+FROM mysql:8.3
 
 # Erstelle einen Arbeitsordner im Container
 WORKDIR /docker-entrypoint-initdb.d

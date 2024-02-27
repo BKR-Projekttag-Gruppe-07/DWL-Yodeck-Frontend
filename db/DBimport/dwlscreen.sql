@@ -45,7 +45,7 @@ INSERT INTO `mitarbeiter` (`Vorname`, `Nachname`, `Anstelldatum`, `Geburtstag`) 
 ('Zephyr', 'Schreiber', '2028-01-23', '1990-01-23'),
 ('Marten', 'Othmann', '2021-02-06', '1990-04-14'),
 ('Ron', 'Schottmeier', '2021-01-24', '1990-02-27'),
-('Malte', 'Roevemeier', '2012-02-027', '1990-02-05'),
+('Malte', 'Roevemeier', '2012-02-27', '1990-02-05'),
 ('Felix', 'Hilbers', '1991-02-27', '1990-01-24'),
 ('Frido', 'Stegemann', '2020-02-05', '1990-01-24');
 
