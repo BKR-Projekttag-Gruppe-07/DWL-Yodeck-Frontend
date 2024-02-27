@@ -45,7 +45,7 @@ services:
 
 
   phpmyadmin:
-    container_name: phpmyadmin1
+    container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin:latest
     networks:
       yodeck_net:
