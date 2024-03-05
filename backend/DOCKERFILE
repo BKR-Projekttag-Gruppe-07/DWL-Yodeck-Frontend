@@ -1,5 +1,5 @@
 # Verwende ein offizielles OpenJDK-Basisimage
-FROM openjdk:latest
+FROM openjdk:22
 
 # Erstelle einen Arbeitsordner im Container
 WORKDIR /app
